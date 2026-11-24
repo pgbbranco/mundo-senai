@@ -9,8 +9,8 @@ A apresentação abordou front-end, responsividade, acessibilidade e AI Slop. O 
 Minha fala abordou AI Slop, o resultado genérico de IA usada sem direção, seus sinais e como evitá-lo com escolhas conscientes, revisão e testes.
 
 ## Materiais
-- [Apresentação original](public/index.html)
-- [Controlador](public/controle.html)
+- [Apresentação original — Frontshit](https://v0-frontshit.vercel.app/)
+- [Código-fonte da apresentação](public/)
 - [Documentação técnica original](DOCUMENTACAO-ORIGINAL.md)
 - [Processo de preparação](PROCESSO.md)
 - [Registro fotográfico](fotos.md)
