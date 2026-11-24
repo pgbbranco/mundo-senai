@@ -1,16 +1,22 @@
-# Mundo SENAI 2026
+# Mundo SENAI 2026 — Front-end ao vivo
 
-## Relato da Apresentação
-No Mundo SENAI, abrimos as portas da escola para a comunidade e apresentámos o nosso projeto a visitantes, professores e colegas. Esta atividade permitiu vivenciar uma experiência real de demonstração e comunicação técnica no mundo do trabalho.
+**Grupo 2 · Técnico em Informática para Internet**
 
-### Informações Gerais
-- **Curso:** Técnico em Informática para Internet
-- **Papel na Equipa:** Demonstração do projeto e atendimento aos visitantes.
-- **Link do Vídeo (Opcional):** [Inserir link do YouTube (não listado) ou Google Drive aqui, se houver]
+## Sobre a atividade
+A apresentação abordou front-end, responsividade, acessibilidade e AI Slop. O visual inicial era propositalmente bagunçado: os visitantes podiam modificar fontes, cores, espaçamentos e outros elementos por meio de um controlador interativo.
 
-## Estrutura da Pasta
-- `apresentacao.pdf`: Slides, banner ou cartaz da apresentação.
-- `fotos/`: Fotografias do estande e da demonstração do projeto.
-- `fotos.md`: Legendas descritivas de cada imagem.
-- `feedbacks.md`: Registo de comentários recebidos e pontos de melhoria.
-- `PROCESSO.md`: Documentação das etapas de preparação.
+## Minha participação
+Minha fala abordou AI Slop, o resultado genérico de IA usada sem direção, seus sinais e como evitá-lo com escolhas conscientes, revisão e testes.
+
+## Materiais
+- [Apresentação original](public/index.html)
+- [Controlador](public/controle.html)
+- [Documentação técnica original](DOCUMENTACAO-ORIGINAL.md)
+- [Processo de preparação](PROCESSO.md)
+- [Registro fotográfico](fotos.md)
+- [Feedbacks](feedbacks.md)
+
+## Aprendizado
+A atividade relacionou decisões de design, experiência do usuário e uso criterioso da IA.
+
+[Voltar ao portfólio](https://pgbbranco.github.io/portfolio/)

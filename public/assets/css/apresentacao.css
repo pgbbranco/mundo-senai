@@ -1,0 +1,270 @@
+/*
+ * Dois mundos nesta folha:
+ *  1. O "chrome" (topo, navegação): sempre legível, nunca editado pelo público.
+ *  2. As três partes (.parte): controladas só por variáveis CSS vindas do celular.
+ */
+
+:root {
+  --chrome-fundo: #151412;
+  --chrome-texto: #f4f1ea;
+  --chrome-suave: #bdb6a6;
+  --chrome-linha: #3a3732;
+  --chrome-acento: #ffb648;
+  --qr-tamanho: clamp(130px, 23vh, 230px);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  color: var(--chrome-texto);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+a {
+  color: var(--chrome-acento);
+}
+
+:focus-visible {
+  outline: 3px solid var(--chrome-acento);
+  outline-offset: 2px;
+}
+
+/* ---------- QR no canto ---------- */
+
+.qr-canto {
+  position: fixed;
+  right: clamp(10px, 1.5vw, 20px);
+  bottom: clamp(10px, 1.5vw, 20px);
+  z-index: 50;
+  width: var(--qr-tamanho);
+  padding: 6px 6px 8px;
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.qr-canto__qr {
+  display: block;
+  line-height: 0;
+}
+.qr-canto__qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.qr-canto__texto {
+  margin: 6px 0 0;
+  font-size: clamp(0.68rem, 1.5vh, 0.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ---------- Barra do apresentador ---------- */
+
+.barra {
+  position: fixed;
+  left: clamp(10px, 1.5vw, 20px);
+  bottom: clamp(10px, 1.5vw, 20px);
+  z-index: 50;
+  display: grid;
+  gap: 8px;
+  max-width: min(620px, calc(100vw - 24px));
+}
+
+.barra__nav,
+.painel {
+  background: rgba(21, 20, 18, 0.94);
+  border: 1px solid var(--chrome-linha);
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.barra__nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 6px;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.barra__nav:hover,
+.barra__nav:focus-within,
+.barra:has(.painel:not([hidden])) .barra__nav {
+  opacity: 1;
+}
+
+.barra__partes {
+  display: flex;
+  gap: 6px;
+}
+
+.barra__contador {
+  padding: 0 6px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--chrome-suave);
+}
+
+.painel {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+.painel[hidden] {
+  display: none;
+}
+
+.painel__link,
+.painel__aviso,
+.painel__dica {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--chrome-suave);
+  overflow-wrap: anywhere;
+}
+.painel__link a {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+.painel__aviso {
+  color: #ffd08a;
+}
+
+.rede {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.rede__ponto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #7a766d;
+}
+.rede__ponto[data-estado="online"] {
+  background: #4ade80;
+}
+.rede__ponto[data-estado="conectando"] {
+  background: #fbbf24;
+}
+.rede__ponto[data-estado="offline"] {
+  background: #f87171;
+}
+
+.travas {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.travas__rotulo {
+  font-size: 0.8rem;
+  color: var(--chrome-suave);
+  margin-right: 2px;
+}
+
+.botao-chrome {
+  appearance: none;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--chrome-linha);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--chrome-texto);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.botao-chrome:hover:not(:disabled) {
+  border-color: var(--chrome-acento);
+}
+.botao-chrome:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.botao-chrome[aria-pressed="true"] {
+  background: #3b2a12;
+  border-color: var(--chrome-acento);
+}
+.botao-chrome--parte[aria-current="true"] {
+  background: var(--chrome-acento);
+  border-color: var(--chrome-acento);
+  color: #1a1408;
+  font-weight: 700;
+}
+
+/* ---------- Palco ---------- */
+
+.palco {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.carregando .palco {
+  visibility: hidden;
+}
+
+/* ---------- Aviso de alterações ao vivo ---------- */
+
+.avisos {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 60;
+  display: grid;
+  gap: 6px;
+  width: min(320px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.avisos__item {
+  padding: 8px 12px;
+  background: var(--chrome-fundo);
+  color: var(--chrome-texto);
+  border: 1px solid var(--chrome-linha);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  animation: aviso 4s ease forwards;
+}
+
+@keyframes aviso {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  8%,
+  82% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sem-js {
+  padding: 24px;
+  color: #fff;
+}

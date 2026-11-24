@@ -1,5 +1,6 @@
-# Processo de Preparação
+# Processo de preparação
 
-1. **Organização:** Divisão de tarefas da equipa e definição do espaço do estande.
-2. **Ensaio:** Criação de um roteiro sem jargões complexos para comunicação com visitantes.
-3. **Execução:** Montagem do equipamento e atendimento ao público durante o evento.
+1. Tema: front-end, responsividade, acessibilidade e AI Slop.
+2. Dinâmica: apresentação com visual inicial bagunçado e controlador para o público modificar a interface.
+3. Minha contribuição: explicação de AI Slop, seus sinais e cuidados para evitá-lo.
+4. Reflexão: decisões conscientes de design e revisão humana são essenciais.

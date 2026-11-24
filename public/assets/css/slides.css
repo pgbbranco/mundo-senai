@@ -1,0 +1,227 @@
+/*
+ * Estilo dos slides, compartilhado pela apresentação (index.html) e pela prévia do painel (controle.html).
+ * Tudo é controlado por variáveis CSS. O título (h1, h2 e a etiqueta acima dele) usa as variáveis
+ * --titulo-*, e o restante do conteúdo usa as variáveis do texto.
+ */
+
+.parte {
+  --fonte: "Comic Sans MS", cursive;
+  --tamanho: 12px;
+  --altura: 1.4;
+  --peso: 400;
+  --estilo-fonte: normal;
+  --caixa: none;
+  --alinhamento: left;
+  --letras: 0px;
+  --palavras: 0px;
+
+  --titulo-fonte: var(--fonte);
+  --esc-titulos: 1;
+  --titulo-peso: 400;
+  --titulo-estilo: normal;
+  --titulo-caixa: none;
+  --titulo-alinhamento: left;
+  --titulo-altura: 1.05;
+  --titulo-letras: 0px;
+  --titulo-espaco: 0px;
+
+  --espaco: 0px;
+  --esp-interno: 0px;
+  --largura: 200ch;
+  --margem: 0 auto;
+  --cor-texto: #000;
+  --cor-fundo: #fff;
+  --cor-titulo: #000;
+  --cor-destaque: #000;
+  --cor-borda: #000;
+  --borda-esp: 0px;
+  --borda-estilo: solid;
+  --raio: 0px;
+  --sombra: none;
+  --inclinacao: 0deg;
+  --padrao: none;
+  --padrao-tam: auto;
+  --marcador: disc;
+  --anim-titulo: none;
+  --anim-corpo: none;
+
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+.parte.saindo {
+  display: block;
+  z-index: 1;
+}
+.parte.ativa {
+  display: block;
+  z-index: 2;
+}
+
+.slide {
+  display: none;
+  height: 100%;
+  overflow: auto;
+  padding: var(--esp-interno);
+  background-color: var(--cor-fundo);
+  background-image: var(--padrao);
+  background-size: var(--padrao-tam);
+  color: var(--cor-texto);
+  font-family: var(--fonte);
+  font-size: var(--tamanho);
+  font-weight: var(--peso);
+  font-style: var(--estilo-fonte);
+  text-transform: var(--caixa);
+  text-align: var(--alinhamento);
+  line-height: var(--altura);
+  letter-spacing: var(--letras);
+  word-spacing: var(--palavras);
+  border: var(--borda-esp) var(--borda-estilo) var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+.slide.ativo,
+.slide.saindo {
+  display: flex;
+  flex-direction: column;
+}
+.slide.ativo {
+  position: relative;
+  z-index: 2;
+}
+.slide.saindo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide__conteudo {
+  width: 100%;
+  max-width: var(--largura);
+  margin: var(--margem);
+  rotate: var(--inclinacao);
+  animation: var(--anim-corpo);
+}
+
+.slide__conteudo > * + * {
+  margin-top: var(--espaco);
+}
+
+/* Título: fonte, peso, caixa, alinhamento, espaço e cor próprios, independentes do texto. */
+.slide h1,
+.slide h2 {
+  margin: 0;
+  color: var(--cor-titulo);
+  font-family: var(--titulo-fonte);
+  font-weight: var(--titulo-peso);
+  font-style: var(--titulo-estilo);
+  text-transform: var(--titulo-caixa);
+  text-align: var(--titulo-alinhamento);
+  letter-spacing: var(--titulo-letras);
+  line-height: var(--titulo-altura);
+  animation: var(--anim-titulo);
+}
+.slide h1 {
+  font-size: calc(3em * var(--esc-titulos));
+}
+.slide h2 {
+  font-size: calc(2em * var(--esc-titulos));
+}
+
+/* A distância entre o título e o que vem logo abaixo é só dele, separada do espaço entre blocos. */
+.slide__conteudo > :is(h1, h2) + * {
+  margin-top: var(--titulo-espaco);
+}
+
+.slide p,
+.slide ul,
+.slide ol,
+.slide pre {
+  margin: 0;
+}
+
+.slide ul,
+.slide ol {
+  padding-inline-start: 1.4em;
+  list-style-type: var(--marcador);
+}
+.slide li + li {
+  margin-top: calc(var(--espaco) * 0.5);
+}
+
+.slide strong,
+.slide .rotulo {
+  color: var(--cor-destaque);
+}
+
+.slide .rotulo {
+  display: block;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: var(--titulo-alinhamento);
+}
+
+.slide .nota {
+  border: 2px solid var(--cor-destaque);
+  padding: 0.6em 0.8em;
+}
+
+.slide code {
+  font-family: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+  font-size: 0.92em;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--cor-destaque);
+}
+.slide pre {
+  padding: 0.7em 0.9em;
+  border: 1px dashed var(--cor-destaque);
+  overflow-x: auto;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes tremer {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2px, -1px);
+  }
+  50% {
+    transform: translate(-2px, 1px);
+  }
+  75% {
+    transform: translate(1px, 2px);
+  }
+}
+@keyframes balancar {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes arcoiris {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide h1,
+  .slide h2,
+  .slide__conteudo {
+    animation: none !important;
+  }
+}

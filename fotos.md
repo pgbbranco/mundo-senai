@@ -1,7 +1,5 @@
-# Fotos do Mundo SENAI
+# Registro fotográfico
 
-![Estande da turma](fotos/estande.jpg)
-Estande no laboratório. Fiquei responsável pela demonstração do site e explicação aos visitantes.
+Fotos do evento a adicionar em `fotos/estande.jpg` e `fotos/projeto.jpg`.
 
-![Projeto em funcionamento](fotos/projeto.jpg)
-O protótipo e a interface a funcionar no ecrã principal durante a apresentação.
+[Capturas da apresentação original](docs/prints/) (não são fotos do evento).
