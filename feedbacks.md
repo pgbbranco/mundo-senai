@@ -1,5 +1,7 @@
 # Feedbacks do Mundo SENAI
 
+> Registro provisório. As falas abaixo aguardam confirmação de quem participou.
+
 ## O que disseram
 - **Visitante:** "A explicação foi clara e fácil de entender."
 - **Professora:** "A demonstração prática foi boa, mas o ritmo inicial foi um pouco rápido."
