@@ -21,7 +21,7 @@ Atalhos no telão: setas, espaço, `Home`, `End` e as teclas `1`, `2`, `3` para 
 
 1. Crie um repositório no GitHub e envie estes arquivos para a branch `main`.
 2. Em **Settings > Pages**, escolha **GitHub Actions** como fonte.
-3. Cada push em `main` publica a pasta `public/` (veja `.github/workflows/pages.yml`). O endereço final é `https://SEU-USUARIO.github.io/NOME-DO-REPO/`.
+3. Cada push em `main` publica a pasta `apresentacao-grupo-2/public/` (veja `.github/workflows/static.yml`). O endereço final é `https://SEU-USUARIO.github.io/NOME-DO-REPO/`.
 
 Todos os caminhos do site são relativos, então ele funciona na raiz de um domínio e em subpastas, como as do GitHub Pages.
 
@@ -29,7 +29,7 @@ O QR code é gerado a partir do endereço onde o site está aberto. Na hora de a
 
 ## Testar localmente
 
-Sirva a pasta `public/` com qualquer servidor estático e abra `index.html` e `controle.html` em duas abas:
+Sirva a pasta `apresentacao-grupo-2/public/` com qualquer servidor estático e abra `index.html` e `controle.html` em duas abas:
 
 ```
 npx serve public
@@ -51,9 +51,9 @@ A comunicação entre telão e celulares usa WebRTC via [PeerJS](https://peerjs.
 
 ```
 .
-├── .github/workflows/pages.yml   publicação automática no GitHub Pages
+├── .github/workflows/static.yml   publicação automática no GitHub Pages
 ├── docs/prints/                  capturas de tela usadas neste README
-├── public/                       o site inteiro
+├── apresentacao-grupo-2/public/   o site inteiro
 │   ├── index.html                slides e telão
 │   ├── controle.html             página aberta pelo QR code
 │   ├── icon.svg                  ícone

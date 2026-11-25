@@ -11,7 +11,7 @@ Minha fala abordou AI Slop, o resultado genérico de IA usada sem direção, seu
 ## Materiais
 - [Pasta da apresentação do Grupo 2](apresentacao-grupo-2/)
 - [Apresentação original — Frontshit](https://v0-frontshit.vercel.app/)
-- [Código-fonte da apresentação](public/)
+- [Código-fonte da apresentação](apresentacao-grupo-2/public/)
 - [Documentação técnica original](DOCUMENTACAO-ORIGINAL.md)
 - [Processo de preparação](PROCESSO.md)
 - [Registro fotográfico](fotos.md)
